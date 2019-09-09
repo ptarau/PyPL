@@ -24,7 +24,7 @@ ys={3,4,5}
 print('xs',xs)
 print('ys',ys)
 
-def union(xs,y) :
+def union(xs,ys) :
   def f() :
     for x in xs :
       yield x
