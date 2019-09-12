@@ -40,6 +40,16 @@ def fibos1(n) :
      rs.append(i)
    return(rs)
 
+def plus(x,y) : return x+y
+
+def reduce_with(f,x,xs) :
+   r=x
+   while xs :
+     y=xs.pop()
+     r=f(r,y)
+   return r
+
+
 # examples of use
 
 print('hello')
