@@ -49,6 +49,16 @@ def reduce_with(f,x,xs) :
      r=f(r,y)
    return r
 
+from functools import reduce
+from  operator import add,mul
+
+
+def t1() :
+  s=reduce(add,[1,2,3,4],0)
+  print(s)
+  p=reduce(mul,[1,2,3,4])
+  print(p)
+  print(sum([1,2,34]))
 
 # examples of use
 
@@ -56,6 +66,7 @@ print('hello')
 
 print(fibo(11))
 
+t1()
 '''
 >>> succ(5)
 6
