@@ -5,6 +5,7 @@ import functools
 s = lambda f: lambda g: lambda x: (f)(x)((g)(x))
 k = lambda x: lambda y: x
 i = lambda x : (s)(k)(k)
+# i = lambda x : x
 
 # Rosser's x combinator in terms of s,k
 x = lambda f: (f)(k)(s)(k)
@@ -19,6 +20,9 @@ succ = lambda x : x+1
 
 # the y recursion combinator
 y = lambda f: (lambda x: x(x))(lambda z: f(lambda u: z(z)(u)))
+
+# looping in Python
+y_ =(s)((k)((s)(i)(i)))((s)((s)((k)(s))(k))((k)((s)(i)(i))))
 
 factorial = lambda f: lambda n: (1 if n<2 else n*f(n-1))
     
@@ -41,6 +45,9 @@ factorial = lambda f: lambda n: (1 if n<2 else n*f(n-1))
 y(factorial)(5)
 120
 '''
+
+l1=y(factorial)(5)
+#l2=y_(factorial)(5)
 
 m1 = list(map (lambda x: x+1,[1,2,3]))
 m2 = list(map (lambda x,y : x+y,[1,2,3],[20,20,30]))
