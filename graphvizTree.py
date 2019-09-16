@@ -1,12 +1,34 @@
 from graphviz import Digraph
 
+def decorateSimple(t) :
+  i=0
+  def st(t) :
+    nonlocal i
+    if t :
+      j = i
+      for s in t:
+        i += 1
+        yield (str(j),str(i))
+        for e in st(s): yield e
+
+  for e in st(t) : yield e
+
+def showSimple(t) :
+  g=Digraph()
+  for e in decorateSimple(t) :
+    f,t=e
+    #g.node(f,'*')
+    #g.node(t,'*')
+    g.edge(f,t)
+  g.view()
+
 def showTree(t) :
   g=Digraph()
   i=0
   
   def label(x) : 
     if isinstance(x,tuple) :
-      return x[0]
+      return str(x[0])
     else :
       return str(x)
    
@@ -19,7 +41,6 @@ def showTree(t) :
         
   def st(a) :   
     nonlocal i
-  
     if isinstance(a,tuple) :
       op=a[0]
       i0=i
@@ -30,6 +51,7 @@ def showTree(t) :
         st(x)
      
   st(t)
+  # print(g)
   g.view()   
   
 
@@ -43,6 +65,7 @@ def t1() :
   g.node('3','c')
   g.edge('1','3')
   g.view()
+  g.clear()
 
 def t1a() :
   g=Digraph()
@@ -65,7 +88,11 @@ def t3() :
    print(t)
    showTree(t)
    
-   
+def s1() :
+  return  list(decorateSimple(((),((),(),()),(),(((),),))))
+
+def s2() :
+  showSimple(((),((),(),()),(),(((),),)))
   
 # test on multiple trees  
 
@@ -86,4 +113,3 @@ def test(i) :
   t=ts[i]
   print(i,'==>',t)
   showTree(t)
-    
