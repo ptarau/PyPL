@@ -25,6 +25,17 @@ def mot (n) :
         for r in mot(n-2-k) :        
           yield (l,r)
 
+# rose tree (multi-way tree) of size n
+def rose(n):
+  if n == 0:
+    yield []
+  else:
+    for k in range(0, n):
+      for l in rose(k):
+        for r in rose(n - 1 - k):
+          yield [l] + r
+
+
 def countFor(f,n) :
   for i in range(n) :
     count = 0
@@ -48,19 +59,22 @@ def picsFor(mes,f,n) :
   for t in f(n) :
     print(t)
     gt.showSimple(t)
-    time.sleep(1)
+    time.sleep(3)
   print("")
 
 def go() :
   showFor('Binary trees',bin,3)
   showFor('Motzkin trees',mot,4)
+  showFor('Rose trees', rose, 3)
 
   countsFor('Binary trees',bin,12)
   countsFor('Motzkin trees',mot,12)
+  countsFor('Rose trees', rose, 12)
 
 
   picsFor('Binary trees',bin,3)
   picsFor('Motzkin trees',mot,4)
+  picsFor('Rose trees', rose, 4)
 
   print("done")
 
