@@ -94,7 +94,7 @@ def t1() :
 
 def t2() :
   a=atest(42)
-  print(len(a),a)
+  print(a)
 
 def t3() :
   abm(1000000)
@@ -133,7 +133,7 @@ class queue(object) :
 
 from random import randint
 
-def ranops(n) :
+def qranops(n) :
   q=queue()
 
   for i in range(n) :
@@ -143,7 +143,7 @@ def ranops(n) :
   return q
 
 def qtest(n) :
-  return str(ranops(n))
+  return str(qranops(n))
 
 # benchmarks using random tests
 
