@@ -1,8 +1,8 @@
 package threads;
 
 public class Consumer implements Runnable {
-    int who;
-    CubbyHole ch;
+    final int who;
+    final CubbyHole ch;
     Consumer(int who,CubbyHole ch) {
         this.who=who;
         this.ch=ch;
