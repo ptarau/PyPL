@@ -117,7 +117,7 @@ print('hello')
 
 print(fibo(11))
 
-t1()
+#t1()
 '''
 >>> succ(5)
 6
