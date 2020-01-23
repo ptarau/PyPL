@@ -96,6 +96,7 @@ def pythagoras2(u):
       yield (x, y, z)
 
 
+
 '''
 >>> for p in pythagoras(20) : print(p)
 ... 
@@ -116,6 +117,26 @@ def pythagoras2(u):
 print('hello')
 
 print(fibo(11))
+
+
+def nat_from(n) :
+  while(True) :
+    yield n
+    n+=1
+
+def take(k,g) :
+  for i,x in enumerate(g) :
+    if i >= k : break
+    yield x
+
+def drop(k,g) :
+  for i,x in enumerate(g) :
+    if i >= k :
+      yield x
+
+# implement drop(k,g) :
+# drops the first k elements
+
 
 #t1()
 '''

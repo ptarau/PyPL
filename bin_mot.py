@@ -4,6 +4,7 @@ import graphvizTree as gt
 import time
 
 # binary tree of size n
+# size = number of in ternal nodes
 def bin(n) :
   if n==0 : 
     yield ()
