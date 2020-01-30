@@ -56,3 +56,24 @@ f1 = list(filter(lambda x : x < 5,range(10)))
 
 r1 = functools.reduce (lambda x,y : x+y,[1,2,3,4])
 
+def map_(f,xs) :
+  for x in xs:
+    yield f(x)
+
+def reduce_(f,z,xs) :
+   for x in xs:
+     z=f(x,z)
+   return z
+
+tree = (9,(1,(2,3)),7)
+
+tree1 = [9,(1,[2,3]),7]
+
+def map_tree(f,t) :
+  if isinstance(t,tuple) :
+    ts=[]
+    for x in t :
+      ts.append(map_tree(f,x))
+    return tuple(ts)
+  else : # leaf
+    return f(t)
