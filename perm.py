@@ -64,6 +64,7 @@ def t6() :
  for P in  permute([1,2,3,4]) :
    print(P)
 
-t2()
+if __name__ == "__main__" :
+  t2()
    
 

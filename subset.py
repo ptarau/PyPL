@@ -1,13 +1,13 @@
 import immutables as im
 
 def subset(Xs) :
-  if not Xs : yield Xs
+  if not Xs : yield Xs # ir empty
   else :
-    X = Xs[0]
-    Ys = Xs[1:]
+    X = Xs[0] # head
+    Ys = Xs[1:] # tail
     for Zs in subset(Ys) :
-      yield Zs
-      yield [X] + Zs
+      yield Zs # inherit from the subsets of tail
+      yield [X] + Zs # extend the subsets of tail
 
 def subset1(Xs) :
   if not Xs : yield None

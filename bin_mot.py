@@ -20,7 +20,7 @@ def mot (n) :
     yield ()
   else :
     for m in mot(n-1) :
-      yield (m,)
+      yield [m]
     for k in range(0,n-1) :    
       for l in mot(k) :
         for r in mot(n-2-k) :        
@@ -87,4 +87,4 @@ def go() :
 
 def test() :
   for n in range(6) :
-    print(n,list(mot(n)))          
+    print(n,list(rose(n)))
