@@ -174,3 +174,51 @@ range(0, 5)
 
 '''
 
+from itertools import *
+
+def take(k,g) :
+  for i,x in enumerate(g):
+    if i>=k : break
+    yield x
+
+def ltake(k,g) :
+  return list(take(k,g))
+
+'''
+
+>>> list(accumulate(range(1,10),lambda x,y : x*y))
+[1, 2, 6, 24, 120, 720, 5040, 40320, 362880]
+>>> chain('ABC', 'DEF')
+<itertools.chain object at 0x7fcb3808dcd0>
+>>> list(chain('ABC', 'DEF'))
+['A', 'B', 'C', 'D', 'E', 'F']
+>>> "".join(chain('ABC', 'DEF'))
+'ABCDEF'
+>>> ";".join(chain('ABC', 'DEF'))
+'A;B;C;D;E;F'
+>>> dropwhile(lambda x: x<5, [1,4,6,4,1])
+<itertools.dropwhile object at 0x7fcb482729b0>
+>>> list(dropwhile(lambda x: x<5, [1,4,6,4,1]))
+>>>
+>>> >>> list(dropwhile(lambda x: x<5, [1,4,6,4,1])
+>>> list(takewhile(lambda x: x<5, [1,4,6,4,1]))
+[1, 4]
+>>> >>> list(filter(lambda x: x<5, [1,4,6,4,1]))
+[1, 4, 4, 1]
+'''
+
+def grouping(data) :
+  groups = []
+  uniquekeys = []
+  def keyfunc(x) :
+   return x
+
+  data = sorted(data, key=keyfunc)
+  for k, g in groupby(data, keyfunc):
+    groups.append(list(g))      # Store group iterator as a list
+    uniquekeys.append(k)
+  return groups,  uniquekeys
+
+data = {0:'a',1:'b',0:'c',1:'d'}
+
+print(grouping(data))
