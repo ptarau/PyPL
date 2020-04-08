@@ -27,4 +27,6 @@ def spirals():
 
 def go() :
   for x in range(4) :
-    spirals()  
+    spirals()
+
+go()
