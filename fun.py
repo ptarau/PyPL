@@ -42,6 +42,8 @@ def fibos1(n) :
 
 def plus(x,y) : return x+y
 
+def mult(x,y) : return x*y
+
 def reduce_with(f,x,xs) :
    r=x
    while xs :
