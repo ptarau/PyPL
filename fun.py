@@ -97,7 +97,7 @@ def pythagoras2(u):
       z = m ** 2 + n ** 2
       yield (x, y, z)
 
-
+# (a-b)^2=a^2-2ab+b^2
 
 '''
 >>> for p in pythagoras(20) : print(p)
