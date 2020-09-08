@@ -1,5 +1,6 @@
-import turtle
+from  sys import getsizeof as s
 
+import turtle
 
 # Set the background color
 turtle.bgcolor("orange")
@@ -57,8 +58,8 @@ def go_circle():
   for i in range(1,20) :
     c.move_to(10*i,10*i)
 
-go_point()
-go_circle()
+#go_point()
+#go_circle()
 
 
 
