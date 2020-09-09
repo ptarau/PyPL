@@ -13,6 +13,12 @@ def file2lines(fname) :
   with open(fname,'r') as f:
     return [l.replace('\n','') for l in f.readlines()]
 
+# TODO
+
+#def lines2file(xs) :
+#
+
+
 def go1():
   s=file2string('examples/temp.txt')
   string2file(s,'examples/temp1.txt')

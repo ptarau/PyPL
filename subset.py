@@ -1,7 +1,7 @@
 import immutables as im
 
 def subset(Xs) :
-  if not Xs : yield Xs # ir empty
+  if not Xs : yield Xs # is empty
   else :
     X = Xs[0] # head
     Ys = Xs[1:] # tail
