@@ -7,7 +7,7 @@ import time
 # size = number of in ternal nodes
 def bin(n) :
   if n==0 : 
-    yield ()
+    yield 'o'
   else :
     for k in range(0,n) :    
       for l in bin(k) :

@@ -77,3 +77,41 @@ def map_tree(f,t) :
     return tuple(ts)
   else : # leaf
     return f(t)
+
+'''
+/usr/local/bin/python3.8 -i /Users/tarau/Desktop/sit/PyPL/sk.py
+>>> lambda x : x+1
+<function <lambda> at 0x7f7fb025bdc0>
+>>> (lambda x : x+1)(10)
+11
+>>> f=(lambda x:x+1)
+>>> f(10)
+11
+>>> f
+<function <lambda> at 0x7f7fb025bdc0>
+>>> (k)(1)(2)
+1
+>>> (k)(1)
+<function <lambda>.<locals>.<lambda> at 0x7f7fb02c8670>
+>>> f=(k)(1)
+>>> f(100)
+1
+>>> (s)(plus)(succ)(10)
+21
+>>> (plus)(10)(20)
+30
+>>> f10=(plus)(10)
+>>> f10(100)
+110
+>>> succ(10)
+11
+>>> i(10)
+10
+>>> sk=(s)(k)
+>>> sk
+<function <lambda>.<locals>.<lambda> at 0x7f7fb02c8670>
+>>> (sk)(k)(10)
+10
+>>> 
+
+'''
