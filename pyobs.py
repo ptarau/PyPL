@@ -16,7 +16,7 @@ class point :
   def color(self,color):
     t.dot(10, color)
 
-  def __init__(self,x,y) :
+  def __init__(self,x=0,y=0) :
     self.x=x
     self.y=y
 
@@ -37,7 +37,7 @@ class point :
     self.show()
 
 class circle(point) :
-  def __init__(self,x,y,r) :
+  def __init__(self,x=0,y=0,r=1) :
     super().__init__(x,y)
     self.r=r
 
@@ -47,19 +47,19 @@ class circle(point) :
 # tests
 
 def go_point() :
-  p=point(0,0)
+  p=point()
   p.show()
   for i in range(1,20) :
     p.move_to(10*i,10*i)
 
 def go_circle():
-  c=circle(0,0,10)
+  c=circle(r=10)
   c.show()
   for i in range(1,20) :
     c.move_to(10*i,10*i)
 
-#go_point()
-#go_circle()
+go_point()
+go_circle()
 
 
 
