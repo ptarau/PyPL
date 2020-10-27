@@ -58,9 +58,10 @@ def go_circle():
   for i in range(1,20) :
     c.move_to(10*i,10*i)
 
-go_point()
-go_circle()
 
-
-
-
+if __name__ == "__main__" :
+  print("RUNNING AS A FILE")
+  go_point()
+  go_circle()
+else :
+  print("IMPORTED AS A MODULE")
