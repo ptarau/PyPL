@@ -51,6 +51,14 @@ def reduce_with(f,x,xs) :
      r=f(r,y)
    return r
 
+def my_map(f,xs,ys) :
+  res=[]
+  for i in range(len(xs)) :
+    r=f(xs[i],ys[i])
+    res.append(r)
+  return res
+
+
 from functools import reduce
 from  operator import add,mul
 
@@ -64,7 +72,7 @@ def t1() :
 
 
 def cartprod(xs, ys):
-  return [(x, y) for x in xs for y in ys]
+  return list((x, y) for x in xs for y in ys)
 
 
 lc1 = cartprod([1, 2], ['a', 'b', 'c'])
