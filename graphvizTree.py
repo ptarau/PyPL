@@ -64,6 +64,7 @@ def t1() :
   g.edge('1','2')
   g.node('3','c')
   g.edge('1','3')
+  g.edge('3','1')
   g.view()
   g.clear()
 
