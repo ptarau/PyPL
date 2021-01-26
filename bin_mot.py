@@ -4,10 +4,10 @@ import graphvizTree as gt
 import time
 
 # binary tree of size n
-# size = number of in ternal nodes
+# size = number of in internal nodes
 def bin(n) :
   if n==0 : 
-    yield 'o'
+    yield ()
   else :
     for k in range(0,n) :    
       for l in bin(k) :
@@ -15,6 +15,7 @@ def bin(n) :
           yield (l,r)
 
 # binary-unary (Motzkin) tree of size n
+# size of binary nodes=2, size of unary nods=1
 def mot (n) :
   if n==0 : 
     yield ()
