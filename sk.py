@@ -1,10 +1,14 @@
 import functools
 
 # s,k combinators, lambdas and more
+# s f g x = (f x)(g x) = f x (g x)
+# k x y = x
 
 s = lambda f: lambda g: lambda x: (f)(x)((g)(x))
 k = lambda x: lambda y: x
 i = lambda x : (s)(k)(k)
+
+# s k k x = (k x) (k x) ==> k x (k x) = x
 # i = lambda x : x
 
 # Rosser's x combinator in terms of s,k
