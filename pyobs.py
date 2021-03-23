@@ -6,11 +6,15 @@ import turtle
 turtle.bgcolor("orange")
 
 # Create a turle
-t = turtle.Turtle()
-t.width(2)
-t.speed(1)
-t.color("red")
 
+def make_turtle() :
+  t = turtle.Turtle()
+  t.width(2)
+  t.speed(1)
+  t.color("red")
+  return t
+
+t=make_turtle()
 
 class point :
   def color(self,color):
