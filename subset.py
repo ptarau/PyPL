@@ -27,7 +27,7 @@ def t3() :
   for t in subset( [0,1,2,3] ) : print(t)
 
 
-{-
+"""
 
  subsets equal in size to their complements
 
@@ -37,5 +37,4 @@ def t3() :
 {1,4} and {2,3}
 {1,2} and {3,4}
 {2,4} and {1,2}
-...
- -}
+"""
