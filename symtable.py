@@ -1,5 +1,8 @@
 class SymTab():
     def __init__(self):
+        """
+        create map from symbols to numbers and back
+        """
         self.ks = dict()
         self.vs = []
 
