@@ -38,9 +38,9 @@ def go():
   s = file2string('examples/temp.txt')
   toks=list(nltk.word_tokenize(s))
   d={'examples/temp.txt':toks,'date':"6 feb 20"}
-  with open('examples/temp.json','w') as g:
+  with open('2021/examples/temp.json', 'w') as g:
     json.dump(d,g)
-  with open('examples/temp.json','r') as f:
+  with open('2021/examples/temp.json', 'r') as f:
     d1=json.load(f)
     print(d1)
 
