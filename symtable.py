@@ -12,6 +12,7 @@ class SymTab():
         v = len(self.vs)
         self.ks[k] = v
         self.vs.append(k)
+        return v
 
     def __repr__(self):
         return self.ks.__repr__()
