@@ -19,7 +19,7 @@ def plot(f, a, b, n=100):
     b = int(n * b)
 
     xs = [x / n for x in range(a, b)]
-    print(xs)
+
     ys = [f(x) for x in xs]
 
     plt.plot(xs, ys, '-r', label=None)
@@ -30,5 +30,6 @@ def plot(f, a, b, n=100):
 def f(x):
     return x * x - 8 * x + 1
 
-plot(lambda x : 2*x+1, -10, 10)
-#plot(f, -10, 10)
+
+plot(lambda x: 2 * x + 1, -10, 10)
+# plot(f, -10, 10)
