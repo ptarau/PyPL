@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def plot(f, a, b, n=100):
@@ -31,5 +30,5 @@ def f(x):
     return x * x - 8 * x + 1
 
 
-plot(lambda x: 2 * x + 1, -10, 10)
+plot(lambda x: 2 * x + 1, -5, 5)
 # plot(f, -10, 10)
