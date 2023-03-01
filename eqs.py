@@ -34,24 +34,26 @@ def oneeq(x, y, m):
             r = r.replace('+-', '-')
             r = r.replace('1x', 'x')
             r = r.replace('1y', 'y')
-            return r
+            slope= -a/b
+            y_when_x_is_0= -c/b
+            return r,(lambda v:slope*v+y_when_x_is_0)
 
 
 def onepair(m):
     x = randint(-m, m)
     y = randint(-m, m)
-    eq1 = oneeq(x, y, m)
+    eq1,f = oneeq(x, y, m)
     while True:
-       eq2 = oneeq(x, y, m)
+       eq2,g = oneeq(x, y, m)
        if eq1!=eq2:
            break
-    return (eq1+ '\n'+ eq2), x, y
+    return (eq1+ '\n'+ eq2), x, y,f,g
 
 
 def eqgen(k=10, m=5, sols=0):
     with open('eqs.txt','w') as f:
       for i in range(k):
-        eqs, x,y = onepair(m)
+        eqs, x,y,_f,_g = onepair(m)
         print(eqs,file=f)
         if sols: print(f'           solution: x={x}, y={y}',file=f)
         print(file=f)
